@@ -171,6 +171,67 @@
 			}
 		},
 
+    'vn': {
+			directions: {
+				N: 'phía bắc',
+				NE: 'Đông Bắc',
+				E: 'phía đông',
+				SE: 'Đông Nam',
+				S: 'phía nam',
+				SW: 'tây nam',
+				W: 'hướng Tây',
+				NW: 'Tây Bắc',
+				SlightRight: 'chếch sang phải',
+				Right: 'Rẽ phải',
+				SharpRight: 'Ngoặt phải',
+				SlightLeft: 'Chếch sang trái',
+				Left: 'Rẽ trái',
+				SharpLeft: 'Ngặt trái',
+				Uturn: 'Quay lại'
+			},
+			instructions: {
+				// instruction, postfix if the road is named
+				'Head':
+					['Đi từ {dir}', ' sang {road}'],
+				'Continue':
+					['Tiếp tục sang {dir}'],
+				'TurnAround':
+					['Quay lại'],
+				'WaypointReached':
+					['Đã đạt điểm tham chiếu'],
+				'Roundabout':
+					['Lấy {exitStr} thoát ra', ' trên {road}'],
+				'DestinationReached':
+					['Đích đến'],
+				'Fork': ['Tại ngã ba, xoay {modifier}', ' trên {road}'],
+				'Merge': ['Hợp nhất {modifier}', ' trên {road}'],
+				'OnRamp': ['Xoay {modifier} Trên đoạn đường nối', ' trên {road}'],
+				'OffRamp': ['Đi đoạn đường nối trên {modifier}', ' trên {road}'],
+				'EndOfRoad': ['Xoay {modifier} ở cuối con đường', ' trên {road}'],
+				'Onto': 'trên {road}'
+			},
+			formatOrder: function(n) {
+				var i = n % 10 - 1,
+				suffix = ['st', 'nd', 'rd'];
+
+				return suffix[i] ? n + suffix[i] : n + 'th';
+			},
+			ui: {
+				startPlaceholder: 'Bắt đầu',
+				viaPlaceholder: 'Thông qua {viaNumber}',
+				endPlaceholder: 'Kết thúc'
+			},
+			units: {
+				meters: 'm',
+				kilometers: 'km',
+				yards: 'yd',
+				miles: 'mi',
+				hours: 'Giờ',
+				minutes: 'Phút',
+				seconds: 'Giấy'
+			}
+		},
+
 		'de': {
 			directions: {
 				N: 'Norden',
